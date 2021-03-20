@@ -5,11 +5,46 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/cbf5cb2769.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <header>
+      <nav>
+        <a href="/">Bookers</a>
+        <ul>
+          <li>
+            <%= link_to root_path do %>
+              <i class="fas fa-home"></i><span>Home</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path do %>
+              <i class="fas fa-link"></i><span>About</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path  do %>
+              <i class="fas fa-user-plus"></i><span>sign up</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path  do %>
+              <i class="fas fa-sign-in-alt"></i><span>login</span>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
+
   </body>
 </html>
