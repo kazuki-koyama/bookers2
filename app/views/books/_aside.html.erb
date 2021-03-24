@@ -1,28 +1,28 @@
     <!--左側-->
     <div class="col-md-3">
       <h2>User info</h2>
-      <%= attachment_image_tag current_user.profile_image, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "no_image.jpg" %>
+      <%= attachment_image_tag book.user.profile_image, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "no_image.jpg" %>
       <table class="table">
         <tbody>
           <tr>
             <th>name</th>
-            <th><%= current_user.name %></th>
+            <th><%= book.user.name %></th>
           </tr>
           <tr>
             <th>introduction</th>
-            <th><%= current_user.introduction %></th>
+            <th><%= book.user.introduction %></th>
           </tr>
         </tbody>
       </table>
       <% if book.user == current_user %>
-        <%= link_to edit_user_path(book.user) do %>
+        <%= link_to edit_user_path(current_user.id) do %>
             <i class="fas fa-user-cog btn btn-outline-secondary btn-block"></i>
         <% end %>
       <% else %>
         <i class="fas fa-user-cog btn btn-outline-secondary btn-block"></i>
       <% end %>
 
-      <h2 class="mt-3">New Book</h2>
+      <h2 class="mt-3">New book</h2>
       <%= form_with model:book, local:true do |f| %>
         <div class="form-group">
           <label for="book_title">Title</label>
