@@ -1,5 +1,4 @@
 <div class="container">
-  <!--エラーメッセージ-->
   <% if @book.errors.any? %>
   <div class="error_explanation">
     <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
@@ -14,7 +13,6 @@
   <% end %>
 
   <div class="row">
-    <!--左側-->
     <%= render 'books/aside', book: @book %>
     <!--右側-->
     <div class="col-md-8">

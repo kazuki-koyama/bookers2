@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.id == current_user.id
       render :edit
     else
-      redirect_to books_path(current_user.id)
+      redirect_to user_path(current_user.id)
     end
   end
   def update
